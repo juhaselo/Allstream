@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      
+    <!-- the popup feature used on this page taken from: http://dev.vast.com/jquery-popup-overlay/ -->
+      
+    <meta charset="utf-8">
+    <title>Allstream</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:url" content="https://content.jwplatform.com/previews/1KNHWu8m-lFIUNxKM">
+    <meta property="og:title" content="Fpvvideosprinttivideo">
+    <meta property="og:image" content="https://assets-jpcust.jwpsrv.com/thumbs/1KNHWu8m-720.jpg">
+    <meta property="og:type" content="video">
+    <meta property="og:video" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:secure_url" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="480">
+    <meta property="og:video:height" content="270">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:player" content="https://content.jwplatform.com/players/1KNHWu8m-lFIUNxKM.html">
+    <meta name="twitter:player:width" content="480">
+    <meta name="twitter:player:height" content="270">
+    <meta name="twitter:player:stream" content="https://content.jwplatform.com/videos/1KNHWu8m-480.mp4">
+    <meta name="twitter:player:stream:content_type" content="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+   
+    <!-- JW Player Wowza -->
+    <script src="jwplayer.js"></script>
+          
+      <script src="http://users.metropolia.fi/~juhataps/Allstream/jwplayer-7.12.8/jwplayer.js"></script>
+    <script>jwplayer.key = "SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc=";</script>
+    <script type="text/javascript" src="jwplayer.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script> 
+      
+      <!--<script type="text/javascript" src="https://content.jwplatform.com/libraries/lFIUNxKM.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script>
+      
+      
+      <!-- Google login -->
+     
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="240418806205-dtajtduu3urouoqtc57s0m4n6kpie8ad.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- JW-player SKIN -->
+    <script src="//content.jwplatform.com/players/MEDIAID-PLAYERID.js"> </script>
+    
+    <!-- jw-player -->
+    <script type="text/javascript" src="jwplayer.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script>
+     
+     
+      
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+    <!-- Include jQuery Popup Overlay -->
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+      
+  </head>
+<!--<style> body { padding-top: 60px; } @media (max-width: 980px) { body { padding-top: 60px; } } </style>-->
+    
+    
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="allstreamlogo2.png" width="120px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Asetukset</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="signOut();">Kirjaudu ulos</a>
+                        <a href="#" onclick="signOut();">Sign out</a>
+                        <script>
+                          function signOut() {
+                            var auth2 = gapi.auth2.getAuthInstance();
+                            auth2.signOut().then(function () {
+                              console.log('User signed out.');
+                            });
+                          }
+                        </script>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Haku</a>
+                    </li>
+                    <li>
+                        <!--  login alkaa -->
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        <script>
+                          function onSignIn(googleUser) {
+                            // Useful data for your client-side scripts:
+                            var profile = googleUser.getBasicProfile();
+                            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                            console.log('Full Name: ' + profile.getName());
+                            console.log('Given Name: ' + profile.getGivenName());
+                            console.log('Family Name: ' + profile.getFamilyName());
+                            console.log("Image URL: " + profile.getImageUrl());
+                            console.log("Email: " + profile.getEmail());
+
+                            // The ID token you need to pass to your backend:
+                            var id_token = googleUser.getAuthResponse().id_token;
+                            console.log("ID Token: " + id_token);
+                          };
+                        </script>
+                        <!--login loppuu -->
+                        <script>          
+                            function onSignIn(googleUser) {
+                              var profile = googleUser.getBasicProfile();
+                              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                              console.log('Name: ' + profile.getName());
+                              console.log('Image URL: ' + profile.getImageUrl());
+                              console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                            }
+                        </script> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+ 
+    <!-- Page Content -->
+    <div class="container">
+        <p style="color: white;"><i>Watch anything, anywhere you go!</i></p>
+      <!-- Page Heading -->
+        <h1 class="my-4">Action</h1>
+
+      <div class="row">
+          
+          <!--
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <a href="elokuva.html"><img class="card-img-top" src="http://users.metropolia.fi/~juhataps/Media/Video/meri.jpg" alt=""></a>
+                  <div class="card-body">
+                      <h4 class="card-title">
+                          <a href="elokuva.html">Video sprintti video</a>
+                      </h4>
+                      <p class="card-text">
+                      </p>
+                  </div>
+              </div>
+          </div>
+-->
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/thor.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">Thor Ragnarok</h4>
+                      <button class="my_popup1_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup1">
+                          <div id="item">
+                              <h1>Thor Ragnarok</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                              
+                              
+                              <script type="text/javascript" src="//content.jwplatform.com/players/b50jod2v-lFIUNxKM.js"></script>
+  <!--                            
+<div id="player"></div>
+<script>jwplayer("player").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:thor.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>-->
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">Imprisoned, the mighty Thor finds himself in a lethal gladiatorial contest against the Hulk, his former ally. Thor must fight for survival and race against time to prevent the all-powerful Hela from destroying his home and the Asgardian civilization.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:26 min <br/> Julkaisupäivä: 3.11.2017</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/inception.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">The Inception</h4>
+                      <button class="my_popup2_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup2">
+                          <div id="item">
+                              <h1>The Inception</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                
+                              <!-- JW-playerin scripti videolle -->
+                             <!-- <script type="text/javascript" src="//content.jwplatform.com/players/zNf2BhVC-lFIUNxKM.js"></script>-->
+                              <div id="player2"></div>
+<script>jwplayer("player2").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:inception.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+                              
+                              
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:18 min <br/> Julkaisupäivä: 23.7.2010</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/avengers1.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">The Avengers</h4>
+                      <button class="my_popup3_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup3">
+                          <div id="item">
+                              <h1>The Avengers</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                              
+                              
+                             <!-- <script type="text/javascript" src="//content.jwplatform.com/players/fwuAziLH-lFIUNxKM.js"></script>-->
+                              
+<div id="player3"></div>
+<script>jwplayer("player3").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:avengers.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+           
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:04 min <br/> Julkaisupäivä: 27.4.2012</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/avengersultron.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">The Avengers: Age of Ultron</h4>
+                      <button class="my_popup4_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup4">
+                          <div id="item">
+                              <h1>The Avengers: Age of Ultron</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                             
+                              <!--<script type="text/javascript" src="//content.jwplatform.com/players/pRgZbsO5-lFIUNxKM.js"></script>-->
+
+<div id="player4"></div>
+<script>jwplayer("player4").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:avengersultron.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+                              
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:33 min <br/> Julkaisupäivä: 22.4.2015</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/wintersoldier.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">Captain America: The Winter Soldier</h4>
+                      <button class="my_popup5_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup5">
+                          <div id="item">
+                              <h1>Captain America: The Winter Soldier</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                              
+                              
+                              <!--<script type="text/javascript" src="//content.jwplatform.com/players/BMHIcNXu-lFIUNxKM.js"></script>-->
+                              
+                              <div id="player5"></div>
+<script>jwplayer("player5").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:winterSoldier.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+             
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:32 min <br/> Julkaisupäivä: 26.3.2014</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/ironman.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">Iron Man</h4>
+                      <button class="my_popup6_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup6">
+                          <div id="item">
+                              <h1>Iron Man</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                
+                              <!-- JW-playerin scripti videolle -->
+                              <!--<script type="text/javascript" src="//content.jwplatform.com/players/gA3zcJMD-lFIUNxKM.js"></script>-->
+                              
+                                                            <div id="player6"></div>
+<script>jwplayer("player6").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:ironman.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+            
+                              
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:29 min <br/> Julkaisupäivä: 1.5.2008</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/ironman2.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">Iron Man 2</h4>
+                      <button class="my_popup7_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup7">
+                          <div id="item">
+                              <h1>Iron Man 2</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                              
+                             <!-- <script type="text/javascript" src="//content.jwplatform.com/players/WDhkZEgl-lFIUNxKM.js"></script>-->
+                              
+    <div id="player7"></div>
+<script>jwplayer("player7").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:ironman2.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:57 min <br/> Julkaisupäivä: 5.5.2010</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <img class="card-img-top" src="movieposters/ironman3.jpg" alt="">
+                  <div class="card-body">
+                      <h4 class="card-title">Iron Man 3</h4>
+                      <button class="my_popup8_open">Watch video</button> <!-- popup -->
+                      <div id="my_popup8">
+                          <div id="item">
+                              <h1>Iron Man 3</h1>
+                              <!--<div id="botr_1KNHWu8m_lFIUNxKM_div"></div>-->
+                                <!-- JW-playerin scripti videolle -->
+                             <!-- <script type="text/javascript" src="//content.jwplatform.com/players/1gPPsLMN-lFIUNxKM.js"></script>-->
+                              
+                                 <div id="player8"></div>
+<script>jwplayer("player8").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:ironman3.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+                              
+                              
+                              <!-- sivu skaalautuu sisällön mukaan, sivulla pitää olla pitkä kuvaus että sivu näkyy mahd. isona! :) -->
+                              <p id="description">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
+                          </div>
+                      </div>
+                      <p class="card-text text-white">Kesto 2:44 min <br/> Julkaisupäivä: 24.4.2013</p>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- varmuuden vuoksi kommenttiin jätetty tyhjän kortin koodi
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Eight</a>
+              </h4>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+-->
+      <!-- /.row -->
+
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center">
+              <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                  </a>
+              </li>
+          </ul>
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Juha Selonen &amp; Petra Lignell 2017</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+      
+      </div>
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/popper/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+        <!-- Google login START -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- Google login END -->
+      
+        <script>
+            if (window == window.top) {
+                document.getElementById("title").style.display = "block";
+                document.getElementById("description").style.display = "block";
+                document.body.style.width = "70%";
+            } else {
+                /** Used to pass play/pause messages parent iframe via postMessage **/
+                window.addEventListener("message", function(evt) {
+                    switch (evt.data) {
+                        case "play":
+                            jwplayer().play(true);
+                            break;
+                        case "pause":
+                            jwplayer().pause(true);
+                            break;
+                    }
+                });
+            }
+        </script>
+      
+        <!-- jQuery popup START -->
+    
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+        <!-- Include jQuery Popup Overlay -->
+        <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                // Initialize the plugin
+                $('#my_popup1').popup();
+            });
+      
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup2').popup();
+            });
+      
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup3').popup();
+            });
+
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup4').popup();
+            });
+
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup5').popup();
+            });
+
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup6').popup();
+            });
+
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup7').popup();
+            });
+
+            $(document).ready(function() {
+              // Initialize the plugin
+              $('#my_popup8').popup();
+            });    
+        </script>
+        
+        <script>
+            $('#standalone').popup({
+                color: 'white',
+                opacity: 1,
+                transition: '0.3s',
+                scrolllock: true
+            });
+        </script>
+        <!-- jQuery popup END -->
+        
+  </body>
+
+</html>

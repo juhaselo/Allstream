@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player</title>
+    <script src="jwplayer.js"></script>
+    <script src="http://users.metropolia.fi/~juhataps/Allstream/jwplayer-7.12.8/jwplayer.js"></script>
+    <script src="//content.jwplatform.com/players/lFIUNxKM.js"> </script>
+    
+    <script>jwplayer.key = "SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc=";</script>
+    <script type="text/javascript" src="jwplayer.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script>
+    </head>
+<body>
+<div id="player"></div>
+<script>jwplayer("player").setup({       
+        sources: [{file: "http://195.148.104.124:1935/vod/mp4:thor.mp4/manifest.mpd"}],
+        height: 720,
+        width: 1280,
+        qualityLabels: true
+    });
+</script>
+
+</body>
+</html>
+

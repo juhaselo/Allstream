@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player</title>
+    <script src="jwplayer.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script>jwplayer.key = "SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc=";</script>
+</head>
+<body>
+<div id="player"></div>
+<pre id="abr"></pre>
+<script>
+    jwplayer("player").setup({
+        sources: [{
+            file: "http://195.148.104.124:1935/vod/smil:sample.smil/jwplayer.smil"
+        }, {
+            file: "http://195.148.104.124:1935/vod/smil:sample.smil/playlist.m3u8"
+        }]
+    });
+
+    jwplayer("player").onMeta(function (event) {
+        if (event.metadata.bandwidth)
+            addChartTick(event.metadata);
+    });
+</script>
+<input type="button" value="clear charts" onclick="clearChartData()"><BR>
+<div style="width:900px;height:200px" id="bw_chart"></div>
+<div style="width:900px;height:120px" id="quality_chart"></div>
+</body>
+<script>
+    var bwData;
+    var bwOptions;
+    var bwChart;
+    var qualityData;
+    var qualityOptions;
+    var qualityChart;
+
+    var counter=-1;
+
+    google.load('visualization', '1.0', {'packages':['corechart']});
+    google.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+
+        bwData = new google.visualization.DataTable();
+        bwData.addColumn('string', 'interval');
+        bwData.addColumn('number', 'bandwidth');
+        bwData.addColumn({'type': 'string', 'role': 'style'});
+        bwOptions = {
+            title: 'Bandwidth',
+            legend: {position:'left'},
+            curveType: 'function',
+            colors: ['#EF851C'],
+            pointSize: 3,
+            hAxis: { textPosition: 'none' }
+        };
+        bwChart = new google.visualization.LineChart(document.getElementById('bw_chart'));
+        bwChart.draw(bwData, bwOptions);
+
+        qualityData = new google.visualization.DataTable();
+        qualityData.addColumn('string', 'interval');
+        qualityData.addColumn('number', 'quality level');
+        qualityData.addColumn({'type': 'string', 'role': 'style'});
+        qualityOptions = {
+            title: 'Quality Level',
+            legend: {position:'left'},
+            colors: ['#FF9900'],
+            pointSize: 3,
+            hAxis: { textPosition: 'none' },
+            vAxis: {
+                ticks: [0,1,2,3,4]
+            }
+        };
+        qualityChart = new google.visualization.LineChart(document.getElementById('quality_chart'));
+        qualityChart.draw(qualityData, qualityOptions);
+    }
+
+    function clearChartData() {
+        qualityData.removeRows(0,qualityData.getNumberOfRows());
+        bwData.removeRows(0,bwData.getNumberOfRows())
+        bwChart.draw(bwData, bwOptions);
+        qualityChart.draw(qualityData, qualityOptions);
+    }
+
+    function addChartTick(metadata) {
+
+        counter++;
+        var count = (metadata.currentLevel)?1:40;
+
+        if (counter % count != 0) {
+            return;
+        }
+
+        var dt = new Date();
+
+        var label = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        var style = "point { size: 2; shape-type: circle; fill-color: #a52714}";
+
+        if (metadata.transitioning=="true") {
+            style = "point { size: 8; shape-type: triangle; fill-color: #00FF99}";
+        }
+
+        if (!isNaN(metadata.bandwidth))
+            bwData.addRow([label,parseInt(metadata.bandwidth) * 1000,style]); //parseInt because sometimes bw is a Long or Double that messes up chart
+
+        var level = null;
+
+        if ("qualitylevel" in metadata) {
+            level = metadata.qualitylevel;
+        } else if ("currentLevel" in metadata) {
+            level=metadata.currentLevel.split(" ")[0];
+        }
+
+        if (typeof level !="null")
+            qualityData.addRow([label,parseInt(level),style]);
+
+        bwChart.draw(bwData, bwOptions);
+        qualityChart.draw(qualityData, qualityOptions);
+
+    }
+</script>
+</html>

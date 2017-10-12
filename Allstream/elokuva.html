@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:url" content="https://content.jwplatform.com/previews/1KNHWu8m-lFIUNxKM">
+    <meta property="og:title" content="Fpvvideosprinttivideo">
+    <meta property="og:image" content="https://assets-jpcust.jwpsrv.com/thumbs/1KNHWu8m-720.jpg">
+    <meta property="og:type" content="video">
+    <meta property="og:video" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:secure_url" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="480">
+    <meta property="og:video:height" content="270">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:player" content="https://content.jwplatform.com/players/1KNHWu8m-lFIUNxKM.html">
+    <meta name="twitter:player:width" content="480">
+    <meta name="twitter:player:height" content="270">
+    <meta name="twitter:player:stream" content="https://content.jwplatform.com/videos/1KNHWu8m-480.mp4">
+    <meta name="twitter:player:stream:content_type" content="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+ 
+    <title>Allstream</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+
+  </head>
+<style> body { padding-top: 100px; } @media (max-width: 980px) { body { padding-top: 100px; } } </style>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="allstreamlogo2.png" width="120px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Playlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Asetukset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Käyttäjä</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kirjaudu ulos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+              <!-- TESTI-->
+      
+          <script src="http://users.metropolia.fi/~juhataps/Allstream/jwplayer-7.12.8/jwplayer.js"></script>
+	<script>jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="</script>
+  	<!-- https://support.jwplayer.com/customer/portal/articles/1406723#fndtn-basic -->
+
+
+<div id="myElement"></div>
+<script type="text/javaScript">
+var playerInstance = jwplayer("myElement");
+playerInstance.setup({
+    file: "http://users.metropolia.fi/~juhataps/Media/Video/FPVvideosprinttivideo.mp4",
+    mediaid: "xxxxYYYY"
+});
+</script>
+
+       
+        
+      
+      <!-- TESTI-->
+        <!--
+        
+        <h1>Video Sprintti</h1>
+            <div id="botr_1KNHWu8m_lFIUNxKM_div"></div>
+            <script type="text/javascript" src="https://content.jwplatform.com/players/1KNHWu8m-lFIUNxKM.js"></script>
+            <p id="description"></p>
+
+            <h3>Kesto 1:59 min Julkasupäivä: 1.2.2017 FPSvidosprintti </h3>
+
+        <script src="//content.jwplatform.com/players/b50jod2v-lFIUNxKM.js"></script>
+        -->
+        
+      <!-- Page Heading -->
+     
+
+      <!-- /.row -->
+
+      <!-- Pagination -->
+ 
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Juha Selonen Petra Lignell 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+      if (window == window.top) {
+          document.getElementById("title").style.display = "block";
+          document.getElementById("description").style.display = "block";
+          document.body.style.width = "70%";
+      } else {
+        /** Used to pass play/pause messages parent iframe via postMessage **/
+        window.addEventListener("message", function(evt) {
+          switch (evt.data) {
+            case "play":
+              jwplayer().play(true);
+              break;
+            case "pause":
+              jwplayer().pause(true);
+              break;
+          }
+        });
+      }
+  </script>
+
+
+  </body>
+
+</html>

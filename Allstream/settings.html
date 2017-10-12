@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      
+    <!-- the popup feature used on this page taken from: http://dev.vast.com/jquery-popup-overlay/ -->
+      
+    <meta charset="utf-8">
+    <title>Allstream</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:url" content="https://content.jwplatform.com/previews/1KNHWu8m-lFIUNxKM">
+    <meta property="og:title" content="Fpvvideosprinttivideo">
+    <meta property="og:image" content="https://assets-jpcust.jwpsrv.com/thumbs/1KNHWu8m-720.jpg">
+    <meta property="og:type" content="video">
+    <meta property="og:video" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:secure_url" content="https://content.jwplatform.com/videos/1KNHWu8m-Qd4mPLCe.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="480">
+    <meta property="og:video:height" content="270">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:player" content="https://content.jwplatform.com/players/1KNHWu8m-lFIUNxKM.html">
+    <meta name="twitter:player:width" content="480">
+    <meta name="twitter:player:height" content="270">
+    <meta name="twitter:player:stream" content="https://content.jwplatform.com/videos/1KNHWu8m-480.mp4">
+    <meta name="twitter:player:stream:content_type" content="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+   
+    <!-- JW Player Wowza -->
+    <!--<script src="jwplayer.js"></script>-->
+          
+    <script src="https://content.jwplatform.com/players/1KNHWu8m-lFIUNxKM.html"></script>
+            
+      <script src="http://users.metropolia.fi/~juhataps/Allstream/jwplayer-7.12.8/jwplayer.js"></script>
+    <script>jwplayer.key = "SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc=";</script>
+    <script type="text/javascript" src="jwplayer.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script> 
+      
+      <!--<script type="text/javascript" src="https://content.jwplatform.com/libraries/lFIUNxKM.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script>
+
+      <!-- Google login -->
+     
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="240418806205-dtajtduu3urouoqtc57s0m4n6kpie8ad.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- JW-player SKIN -->
+    <script src="//content.jwplatform.com/players/lFIUNxKM.js"> </script>
+          
+    <!-- jw-player -->
+    <script type="text/javascript" src="jwplayer.js" jwplayer.key="SE6pswECFjQvxi7eX0zeHdyyAgT2HoEAzsVJNHJ8aOc="></script>
+     
+
+      
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+    <!-- Include jQuery Popup Overlay -->
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+    
+    <!-- Link to JSON file -->  
+    <script type="text/javascript" src="testfile.json"></script>
+      
+  </head>
+<!--<style> body { padding-top: 60px; } @media (max-width: 980px) { body { padding-top: 60px; } } </style>-->
+    
+    
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="allstreamlogo2.png" width="120px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Settings</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#" onclick="signOut();">Kirjaudu ulos</a>
+                        <a href="#" onclick="signOut();">Sign out</a>
+                        <script>
+                          function signOut() {
+                            var auth2 = gapi.auth2.getAuthInstance();
+                            auth2.signOut().then(function () {
+                              console.log('User signed out.');
+                            });
+                          }
+                        </script>
+                    </li>-->
+                    <li class="nav-item">
+                        <p style="color: white;"> <img src="search.png" alt="" width="42" height="42"> <input type="text" name="haku" placeholder="Search"> <input type="button" value="Search movies"> </p>
+                    </li>
+                    <li>
+                        <!--  login alkaa -->
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        <script>
+                          function onSignIn(googleUser) {
+                            // Useful data for your client-side scripts:
+                            var profile = googleUser.getBasicProfile();
+                            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                            console.log('Full Name: ' + profile.getName());
+                            console.log('Given Name: ' + profile.getGivenName());
+                            console.log('Family Name: ' + profile.getFamilyName());
+                            console.log("Image URL: " + profile.getImageUrl());
+                            console.log("Email: " + profile.getEmail());
+
+                            // The ID token you need to pass to your backend:
+                            var id_token = googleUser.getAuthResponse().id_token;
+                            console.log("ID Token: " + id_token);
+                          };
+                        </script>
+                        <!--login loppuu -->
+                        <script>          
+                            function onSignIn(googleUser) {
+                              var profile = googleUser.getBasicProfile();
+                              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                              console.log('Name: ' + profile.getName());
+                              console.log('Image URL: ' + profile.getImageUrl());
+                              console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                            }
+                        </script> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+ 
+    <!-- Page Content -->
+    <div class="container">
+        <p style="color: white;"><i>Watch anything, anywhere you go!</i></p>
+      <!-- Page Heading -->
+        
+        <h1 class="my-4">Settings</h1>
+        
+        <div id="settingsdiv">
+
+            <h2 style="color: white;">Theme</h2>
+              <p style="color: white;">Select the preferred theme you want to use on our website</p>
+              <form style="color: white;">
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio" checked="checked">Dark theme 
+                </label>
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio">Light theme
+                </label>
+              </form>
+            
+            <br/>
+            
+            <h2 style="color: white;">Preferred video quality</h2>
+              <p style="color: white;">Change the preferred quality for videos</p>
+              <form style="color: white;">
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio">180p 
+                </label>
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio">360p
+                </label>
+                  <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio">720p
+                </label>
+                  <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio" checked="checked">1080p
+                </label>
+              </form>
+            
+            <br/>
+            
+            <h2 style="color: white;">Subtitles</h2>
+              <p style="color: white;">Select your preferred settings for subtitles</p>
+              <form style="color: white;">
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio" checked="checked">Show subtitles 
+                </label>
+                <label class="radio-inline" style="padding-right: 20px;">
+                  <input type="radio" name="optradio">Do not show subtitles
+                </label>
+              </form>
+        </div>
+      </div>
+        
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Juha Selonen &amp; Petra Lignell 2017</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+      
+      <script>
+          $().button('toggle')
+      </script>
+      
+        
+  </body>
+
+</html>
